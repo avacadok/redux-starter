@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
+//useSelector hook is used to access values of states
+import { useSelector } from 'react-redux';
 
 function Profile() {
+  const user = useSelector((state) => state.user.value)
   return (
     <div>
       <h1>Profile Page</h1>
-      <p>Name:</p>
-      <p>Age:</p>
-      <p>Pet:</p>
+      <p>Name: {user.name}</p>
+      <p>Age: {user.age}</p>
+      <p>Email: {user.email}</p>
     </div>
   )
 }
